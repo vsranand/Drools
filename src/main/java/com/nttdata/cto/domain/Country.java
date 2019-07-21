@@ -12,9 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 @Entity
 @Table(name = "country")
 public class Country {
@@ -29,6 +26,10 @@ public class Country {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="CountryCode")
 	private List<City> cities;
+
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="CountryCode")
+	private List<CountryLanguage> languages;
 
 	public Country() {
 		
@@ -56,6 +57,12 @@ public class Country {
 	}
 	public void setCities(List<City> cities) {
 		this.cities = cities;
+	}
+	public List<CountryLanguage> getLanguages() {
+		return languages;
+	}
+	public void setLanguages(List<CountryLanguage> languages) {
+		this.languages = languages;
 	}
 
 	@Override

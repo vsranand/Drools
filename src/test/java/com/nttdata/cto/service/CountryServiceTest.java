@@ -16,7 +16,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.nttdata.cto.domain.Country;
-import com.nttdata.cto.dto.CountryDTO;
 import com.nttdata.cto.repository.CountryRepository;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -33,8 +32,8 @@ public class CountryServiceTest {
 	public void getCountryTest() {
 		final Optional<Country> expectedValue = Optional.of(new Country());
 		when(countryRepository.findById(anyString())).thenReturn(expectedValue);
-		final CountryDTO expectedCountry = new CountryDTO();
-		CountryDTO country = countryService.getCountry(anyString());
+		final Country expectedCountry = new Country();
+		Country country = countryService.getCountry(anyString());
 		assertEquals("Country",country,expectedCountry);
 	}
 
@@ -42,7 +41,7 @@ public class CountryServiceTest {
 	public void getAllCountriesTest() {
 		final List<Country> expectedList = new ArrayList<>();
 		when(countryRepository.findAll()).thenReturn(expectedList);
-		List<CountryDTO> countryList = countryService.getAllCountries();
+		List<Country> countryList = countryService.getAllCountries();
 		assertEquals("Country",countryList,expectedList);
 	}
 

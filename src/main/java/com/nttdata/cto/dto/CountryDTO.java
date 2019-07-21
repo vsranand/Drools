@@ -11,6 +11,7 @@ public class CountryDTO {
 	private String code;
 	private String name;
 	private List<CityDTO> cities;
+	private List<CountryLanguageDTO> languages;
 
 	public CountryDTO() {
 		
@@ -38,6 +39,12 @@ public class CountryDTO {
 	}
 	public void setCities(List<CityDTO> cities) {
 		this.cities = cities;
+	}
+	public List<CountryLanguageDTO> getLanguages() {
+		return languages;
+	}
+	public void setLanguages(List<CountryLanguageDTO> languages) {
+		this.languages = languages;
 	}
 
 	@Override
