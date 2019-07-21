@@ -1,14 +1,12 @@
 package com.nttdata.cto.mongo.domain;
 
-import com.nttdata.cto.domain.Official;
-
 public class CountryLanguage {
 
 	private String countryCode;
 
 	private String language;
 
-	private Official isOfficial;
+	private String isOfficial;
 
 	private float percentage;
 
@@ -28,11 +26,11 @@ public class CountryLanguage {
 		this.language = language;
 	}
 
-	public Official getIsOfficial() {
+	public String getIsOfficial() {
 		return isOfficial;
 	}
 
-	public void setIsOfficial(Official isOfficial) {
+	public void setIsOfficial(String isOfficial) {
 		this.isOfficial = isOfficial;
 	}
 
