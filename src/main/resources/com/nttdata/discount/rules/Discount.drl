@@ -1,0 +1,22 @@
+package com.nttdata.discount.rules
+
+import com.nttdata.cto.model.Person
+
+rule "Offer for Child"
+	when 
+		personObject: Person(age<18)
+	then
+		personObject.setDiscount(15);
+	end
+rule "Offer for Adult"
+	when 
+		personObject: Person(age>18 && age<60)
+	then
+		personObject.setDiscount(10);
+	end
+rule "Offer for Senior"
+	when 
+		personObject: Person(age>60)
+	then
+		personObject.setDiscount(20);
+	end
